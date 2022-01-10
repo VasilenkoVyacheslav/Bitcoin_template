@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700;900&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
 
 * {
     margin: 0;
@@ -7,16 +7,16 @@
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    text-transform: uppercase;
+    color: #424343;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-    text-transform: uppercase;
+    color: #424343;
 }
 :-ms-input-placeholder { /* IE 10+ */
-    text-transform: uppercase;
+    color: #424343;
 }
 :-moz-placeholder { /* Firefox 18- */
-    text-transform: uppercase;
+    color: #424343;
 }
 
 ul {
@@ -29,11 +29,9 @@ img {
 }
 
 body {
-    font: 400 16px/1.75 $roboto;
-
-    &.no-scroll {
-        overflow: hidden;
-    }
+    font: 400 17px/1 $poppins;
+    color: $light;
+    background: #041436 url("../images/background.jpg") no-repeat 50% 100%;
 }
 
 a {
@@ -64,9 +62,4 @@ section {
     min-width: 320px;
     margin: 0 auto;
     padding: 0 15px;
-}
-
-.flex {
-    display: flex;
-    flex-wrap: wrap;
 }
