@@ -1,26 +1,46 @@
 window.$ = window.jQuery = require('jquery');
+// Swiper Home
+import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
+Swiper.use([ Autoplay, Navigation, Pagination ]);
 
-//Mobile menu
-$('.header__navigation-button').on('click', function() {
-    $('.header__navigation').toggleClass('opened');
-    $('body').toggleClass('no-scroll');
-})
-
+// Search
 $(document).ready(function (){
 
+    let search = document.querySelector(".search")
+    let btn = document.querySelector(".search-button")
+    let input = document.querySelector(".input")
+
+    btn.addEventListener('click',()=>{
+        search.classList.toggle('active');
+        input.focus()
+    });
+
+    const swiper = new Swiper('.home__swiper', {
+        loop: true,
+        autoplay: {
+            delay: 5000,
+        },
+        slidesPerView: 1,
+        spaceBetween: 0,
+        autoHeight: 'true',
+        navigation: {
+            nextEl: '.home__swiper-button-next',
+            prevEl: '.home__swiper-button-prev',
+        },
+    });
+
+    //Mobile menu
+    $('.menu-icon').on('click', function() {
+        $('.menu').addClass('active');
+    })
+    $('.cancel-icon').on('click', function() {
+        $('.menu').removeClass('active');
+    });
+
+    // Tabs
+    $('.tabs__button').on('click', function () {
+        $(".tabs .tabs__button").removeClass("active").eq($(this).index()).addClass("active");
+        $(".tabs__item").hide().eq($(this).index()).fadeIn();
+    }).eq(0).addClass("active");
+    $(".tabs__item").eq(0).fadeIn();
 })
-
-//Anchor links
-// $('a').on('click', function (e) {
-//     e.preventDefault();
-//     const hh = $('.header').outerHeight();
-//     if(this.hash !== '') {
-//         const hash = this.hash;
-//         $('html, body').animate({
-//             scrollTop: $(hash).offset().top - hh
-//         }, 300, function () {
-//             window.location.hash = hash - hh;
-//         })
-//     }
-// })
-
