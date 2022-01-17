@@ -190,7 +190,7 @@
                     <div class="tabs__content">
                         <div class="tabs__items">
                             <div class="tabs__item">
-                                <div class="tabs__marquee">
+                                <div class="tabs__marquee marquee">
                                     <div class="tabs__marquee-item">
                                         <div><span class="gold-text">USD</span> 123456.09</div>
                                         Last Price
@@ -256,7 +256,7 @@
                                 </div>
                             </div>
                             <div class="tabs__item">
-                                <div class="tabs__marquee">
+                                <div class="tabs__marquee marquee" data-duration='5000' data-gap='30'>
                                     <div class="tabs__marquee-item">
                                         <div><span class="gold-text">USD</span> 123456.09</div>
                                         Last Price
@@ -338,6 +338,16 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        <section class="video">
+            <div class="container">
+                <div class="video__container">
+                    <video id="video" poster="./images/video.jpg" loop muted>
+                        <source src="./video/video.mp4" type="video/mp4">
+                    </video>
+                    <div class="video__play paused"></div>
                 </div>
             </div>
         </section>
