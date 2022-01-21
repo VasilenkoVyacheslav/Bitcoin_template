@@ -1,0 +1,140 @@
+.footer {
+
+    .title-25 {
+        position: relative;
+        display: inline-block;
+
+        &:after {
+            content: '';
+            height: 6px;
+            width: 0;
+            background: $gold;
+            position: absolute;
+            left: 0;
+            top: calc(100% + 10px);
+            transition: .4s ease-out;
+        }
+    }
+
+    .row {
+
+        @include screen(768) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    .col-25 {
+
+        @include screen(768) {
+            width: calc(50% - 30px);
+            padding: 15px 0;
+        }
+
+        @include screen(620) {
+            width: 100%;
+        }
+
+        &:hover {
+
+            .title-25 {
+
+                &:after {
+                    width: 100%;
+                }
+            }
+        }
+
+        a {
+            transition: .4s;
+
+            &:hover {
+                text-decoration: underline;
+                text-decoration-color: $gold;
+            }
+        }
+
+        div, a, ul {
+            color: $whiteHalf
+        }
+
+        li, a, div {
+            display: block;
+            padding: 7px 0;
+
+            a {
+                padding: 0;
+            }
+        }
+    }
+
+    .footer__contacts {
+
+        li {
+            position: relative;
+            padding-left: 25px;
+
+            img {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                max-width: 16px;
+            }
+        }
+    }
+
+    &__newsletter {
+
+        input {
+            border: 2px solid $white;
+            height: 55px;
+            padding: 15px 18px;
+            display: inline-block;
+            width: 100%;
+            color: $whiteHalf;
+            background: none;
+            border-radius: 0;
+            font-size: 17px;
+            line-height: 1;
+
+            &[type="submit"] {
+                width: auto;
+                padding: 10px 42px;
+                text-transform: uppercase;
+            }
+
+            & + input {
+                margin-top: 18px;
+            }
+        }
+
+        ::-webkit-input-placeholder {
+            color: $whiteHalf;
+            font-size: 17px;
+        }
+        ::-moz-placeholder {
+            color: $whiteHalf;
+            font-size: 17px;
+        }
+        :-ms-input-placeholder {
+            color: $whiteHalf;
+            font-size: 17px;
+        }
+        :-moz-placeholder {
+            color: $whiteHalf;
+            font-size: 17px;
+        }
+    }
+
+    &__container {
+        margin: 0 0 80px;
+    }
+
+    &__copyright {
+        color: $whiteHalf;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, .35);
+        padding: 36px 0;
+    }
+}
